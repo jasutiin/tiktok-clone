@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import VideoItem from './components/VideoItem';
+import VideoItem from '../components/VideoItem';
 import { Dimensions } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
@@ -32,11 +32,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000000',
-  },
-  list: {
-    borderWidth: 1,
-    borderColor: 'red',
-    flex: 1,
   },
 });
 

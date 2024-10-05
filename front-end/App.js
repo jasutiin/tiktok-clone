@@ -16,7 +16,6 @@ import Post from './screens/Post';
 import Inbox from './screens/Inbox';
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 
 function HomeHeaderTitle() {
   return (
@@ -50,10 +49,6 @@ export default function App() {
             options={{
               headerTransparent: true,
               headerTitleAlign: 'center',
-              headerStyle: {
-                borderWidth: 1,
-                borderColor: 'red',
-              },
               tabBarIcon: ({ color, size }) => (
                 <Ionicons name="home" color={color} size={30} />
               ),
@@ -61,11 +56,6 @@ export default function App() {
                 <Pressable>
                   <Fontisto name="search" size={26} color={'#ffffff'} />
                   {/* <Text style={styles.headerText}>SEARCH</Text> */}
-                </Pressable>
-              ),
-              headerLeft: () => (
-                <Pressable>
-                  <MaterialIcons name="live-tv" size={30} color={'#ffffff'} />
                 </Pressable>
               ),
               headerTitle: (props) => <HomeHeaderTitle {...props} />,
@@ -78,10 +68,7 @@ export default function App() {
             options={{
               headerTransparent: true,
               headerTitleAlign: 'center',
-              headerStyle: {
-                borderWidth: 1,
-                borderColor: 'red',
-              },
+              headerTitle: ' ',
               tabBarIcon: ({ color, size }) => (
                 <FontAwesome6 name="user-group" color={color} size={22} />
               ),
@@ -91,13 +78,7 @@ export default function App() {
                   {/* <Text style={styles.headerText}>SEARCH</Text> */}
                 </Pressable>
               ),
-              headerLeft: () => (
-                <Pressable>
-                  <FontAwesome6 name="user-large" color="white" size={22} />
-                </Pressable>
-              ),
             }}
-            backgroundColor="black"
           />
           <Tab.Screen
             name="Post"
@@ -114,8 +95,16 @@ export default function App() {
             component={Inbox}
             options={{
               headerTransparent: true,
+              headerTitleAlign: 'center',
+              headerTintColor: 'white',
               tabBarIcon: ({ color, size }) => (
                 <FontAwesome6 name="inbox" color={color} size={24} />
+              ),
+              headerRight: () => (
+                <Pressable>
+                  <Fontisto name="search" size={26} color={'#ffffff'} />
+                  {/* <Text style={styles.headerText}>SEARCH</Text> */}
+                </Pressable>
               ),
             }}
           />
@@ -147,8 +136,6 @@ const styles = StyleSheet.create({
   homeHeaderMid: {
     flexDirection: 'row',
     gap: 20,
-    borderWidth: 1,
-    borderColor: 'red',
   },
   headerText: {
     fontWeight: 'bold',

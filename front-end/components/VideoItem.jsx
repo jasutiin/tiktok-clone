@@ -17,8 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: windowWidth,
     height: windowHeight,
-    borderWidth: 1,
-    borderColor: 'white',
   },
   text: {
     color: 'white',

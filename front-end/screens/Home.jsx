@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import VideoItem from './components/VideoItem';
+import VideoItem from '../components/VideoItem';
 import { Dimensions } from 'react-native';
+import { useRef } from 'react';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -21,6 +22,7 @@ function Home() {
         snapToAlignment="start" // Start each item from the top of the screen
         decelerationRate="fast" // Fast snapping
         pagingEnabled // Enables paging to make it scroll one item at a time
+        scrollEventThrottle={16}
       />
     </View>
   );
@@ -32,11 +34,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000000',
-  },
-  list: {
-    borderWidth: 1,
-    borderColor: 'red',
-    flex: 1,
   },
 });
 
