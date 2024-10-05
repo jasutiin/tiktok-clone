@@ -94,7 +94,7 @@ export default function App() {
             name="Inbox"
             component={Inbox}
             options={{
-              headerTransparent: true,
+              headerTransparent: false,
               headerTitleAlign: 'center',
               headerTintColor: 'white',
               tabBarIcon: ({ color, size }) => (
@@ -106,6 +106,9 @@ export default function App() {
                   {/* <Text style={styles.headerText}>SEARCH</Text> */}
                 </Pressable>
               ),
+              headerStyle: {
+                backgroundColor: 'black',
+              },
             }}
           />
           <Tab.Screen
