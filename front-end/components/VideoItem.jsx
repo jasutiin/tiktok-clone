@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native'; // without Text import the video doesn't show up lol
 import { Dimensions } from 'react-native';
 import { useState, useRef } from 'react';
 import { Video, ResizeMode } from 'expo-av';
