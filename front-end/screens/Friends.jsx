@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import VideoItem from '../components/VideoItem';
 import { Dimensions } from 'react-native';
 
@@ -9,18 +9,15 @@ function Friends() {
   return (
     <View style={styles.container}>
       <FlatList
-        data={[
-          { key: 'VIDEO 1' },
-          { key: 'VIDEO 2' },
-          { key: 'VIDEO 3' },
-          { key: 'VIDEO 4' },
-        ]}
+        data={[{ key: 'VIDEO 1' }]}
         renderItem={({ item }) => <VideoItem content={item.key} />}
+        showsVerticalScrollIndicator={false}
         style={styles.list}
         snapToInterval={windowHeight} // Snap to each item (height of screen)
         snapToAlignment="start" // Start each item from the top of the screen
         decelerationRate="fast" // Fast snapping
         pagingEnabled // Enables paging to make it scroll one item at a time
+        scrollEventThrottle={16}
       />
     </View>
   );

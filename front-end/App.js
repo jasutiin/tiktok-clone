@@ -2,10 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, Text, View, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Fontisto from 'react-native-vector-icons/Fontisto';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 
@@ -55,7 +53,6 @@ export default function App() {
               headerRight: () => (
                 <Pressable>
                   <Fontisto name="search" size={26} color={'#ffffff'} />
-                  {/* <Text style={styles.headerText}>SEARCH</Text> */}
                 </Pressable>
               ),
               headerTitle: (props) => <HomeHeaderTitle {...props} />,
@@ -75,7 +72,6 @@ export default function App() {
               headerRight: () => (
                 <Pressable>
                   <Fontisto name="search" size={26} color={'#ffffff'} />
-                  {/* <Text style={styles.headerText}>SEARCH</Text> */}
                 </Pressable>
               ),
             }}
@@ -103,7 +99,6 @@ export default function App() {
               headerRight: () => (
                 <Pressable>
                   <Fontisto name="search" size={26} color={'#ffffff'} />
-                  {/* <Text style={styles.headerText}>SEARCH</Text> */}
                 </Pressable>
               ),
               headerStyle: {
