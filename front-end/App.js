@@ -3,15 +3,12 @@ import { Platform, StyleSheet, Text, View, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 
 import Home from './screens/Home';
-import Friends from './screens/Friends';
 import Profile from './screens/Profile';
 import Post from './screens/Post';
-import Inbox from './screens/Inbox';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,31 +47,9 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <Ionicons name="home" color={color} size={30} />
               ),
-              headerRight: () => (
-                <Pressable>
-                  <Fontisto name="search" size={26} color={'#ffffff'} />
-                </Pressable>
-              ),
               headerTitle: (props) => <HomeHeaderTitle {...props} />,
             }}
             backgroundColor="black"
-          />
-          <Tab.Screen
-            name="Friends"
-            component={Friends}
-            options={{
-              headerTransparent: true,
-              headerTitleAlign: 'center',
-              headerTitle: ' ',
-              tabBarIcon: ({ color, size }) => (
-                <FontAwesome6 name="user-group" color={color} size={22} />
-              ),
-              headerRight: () => (
-                <Pressable>
-                  <Fontisto name="search" size={26} color={'#ffffff'} />
-                </Pressable>
-              ),
-            }}
           />
           <Tab.Screen
             name="Post"
@@ -84,26 +59,6 @@ export default function App() {
               tabBarIcon: ({ color, size }) => (
                 <FontAwesome6 name="plus-square" color={color} size={26} />
               ),
-            }}
-          />
-          <Tab.Screen
-            name="Inbox"
-            component={Inbox}
-            options={{
-              headerTransparent: false,
-              headerTitleAlign: 'center',
-              headerTintColor: 'white',
-              tabBarIcon: ({ color, size }) => (
-                <FontAwesome6 name="inbox" color={color} size={24} />
-              ),
-              headerRight: () => (
-                <Pressable>
-                  <Fontisto name="search" size={26} color={'#ffffff'} />
-                </Pressable>
-              ),
-              headerStyle: {
-                backgroundColor: 'black',
-              },
             }}
           />
           <Tab.Screen
